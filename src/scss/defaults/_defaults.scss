@@ -1,0 +1,86 @@
+.site-wrapper {
+  background-image: url('/img/body-stripes-pattern.png');
+  background-size: 5px 5px;
+  background-position: left top;
+}
+svg {
+  fill: $white;
+  &.search-icon {
+    max-width: 24px;
+    max-height: 23px;
+  }
+  &.menu-icon {
+    max-width: 32px;
+    max-height: 18px;
+  }
+  &.close-icon {
+    max-width: 20px;
+    max-height: 20px;
+  }
+}
+.logo {
+  @include background-icon('logo') {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+  width: 100%;
+  height: 100%;
+}
+.icon {
+  display: inline-block;
+  &--facebook,
+  &--twitter,
+  &--instagram,
+  &--vimeo,
+  &--gplus {
+    background-position: center center;
+    background-size: 39px 39px;
+    width: 39px;
+    height: 39px;
+  }
+  &--facebook {
+    @include background-icon('facebook-icon');
+  }
+  &--twitter {
+    @include background-icon('twitter-icon');
+  }
+  &--instagram {
+    @include background-icon('instagram-icon');
+  }
+  &--vimeo {
+    @include background-icon('vimeo-icon');
+  }
+  &--gplus {
+    @include background-icon('gplus-icon');
+  }
+  &--search {
+    height: 23px;
+    width: 24px;
+  }
+  &--nav {
+    width: 32px;
+    height: 22px;
+  }
+  &--close {
+    width: 20px;
+    height: 20px;
+  }
+  &--play-button {
+    @include background-icon('play-icon');
+  }
+}
+.social-icons {
+  font-size: 0;
+  .icon {
+    vertical-align: top;
+    margin-right: 25px;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

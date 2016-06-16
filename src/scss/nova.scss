@@ -1,0 +1,28 @@
+//
+//  Import default css to set a base/foundation for the site
+//
+@import 'defaults/config',
+        'defaults/easing',
+        'defaults/mixins',
+        'defaults/placeholders',
+        'defaults/reset',
+        'defaults/defaults';
+
+//
+//  Import Global Components
+//
+@import 'components/hero',
+        'components/header',
+        'components/footer',
+        'components/site-nav',
+        'components/soundtracks',
+        'components/feed',
+        'components/ad',
+        'components/latest-reviews',
+        'components/carousel',
+        'components/load-more';
+
+//
+//  Import the layouts used for different page types
+//
+@import 'layouts/home';

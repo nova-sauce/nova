@@ -1,0 +1,13 @@
+<div class="hero" {{#if img_url}}style="background-image: url('/img/{{img_url}}');"{{/if}}>
+  <div class="hero__logo">
+    <div class="logo"></div>
+  </div>
+  <div class="hero__title">
+    <svg class="logo-text"><use xlink:href="#logo-text"></use></svg>
+  </div>
+  <div class="hero__by-line">
+    {{#if slogan}}
+      {{> tagline }}
+    {{/if}}
+  </div>
+</div>

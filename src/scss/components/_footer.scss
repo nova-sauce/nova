@@ -1,0 +1,66 @@
+.footer {
+  background-color: $cod-gray;
+  @include clearfix;
+  &__brand-info,
+  &__info {
+    float: left;
+    min-height: 354px;
+  }
+  &__brand-info {
+    background-color: $silver;
+    padding: 130px 150px;
+    &__logo {
+      font-size: 0;
+      .logo,
+      .logo-text {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .logo {
+        height: 77px;
+        width: 63px;
+        margin-right: 20px;
+      }
+      .logo-text {
+        fill: $black;
+        max-width: 321px;
+        max-height: 32px;
+      }
+    }
+    &__disclaimer {
+      padding-left: 83px;
+      p {
+        font-size: 14px;
+        @include letter-spacing(60, 14);
+      }
+    }
+  }
+  &__info {
+    padding: 80px 100px;
+    height: 100%;
+    .social-icons {
+      margin-bottom: 40px;
+    }
+    &__links {
+      ul {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 130px;
+        li {
+          color: $white;
+          margin-bottom: 25px;
+          font-size: 12px;
+          line-height: 10px;
+          text-transform: uppercase;
+          @include letter-spacing(60, 12);
+          a {
+            color: $white;
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

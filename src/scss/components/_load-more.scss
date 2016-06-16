@@ -1,0 +1,26 @@
+.load-more {
+  max-width: 1228px;
+  margin: 40px auto 80px;
+  text-align: center;
+  &__title {
+    font-size: 48px;
+    color: #2e2f30;
+    @extend %RobotoSlabBold;
+    margin-bottom: 25px;
+  }
+  &__cta {
+    background: none;
+    background-color: #00a2e3;
+    color: $white;
+    text-transform: uppercase;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    font-size: 16px;
+    line-height: 16px;
+    @extend %RobotoBold;
+    @include letter-spacing(60, 16);
+    padding: 22px;
+    cursor: pointer;
+  }
+}

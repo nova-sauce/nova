@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300,900,500,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
+
+// Base Colors
+$white: #fff;
+$black: #000;
+
+// Colors
+$coral-red: #ff3b44;
+$razzmatazz: #ed217c;
+$gallery: #ededed;
+$mercury: #e3e3e3;
+$mine-shaft: #333;
+$silver: #bababa;
+$alto: #dfdfdf;
+$cod-gray: #222;
+$japanese-laurel: #086e1a;
+$salem: #05ac23;
+$persian-rose: #ff1d8c;
+$tangerine: #e89800;
+
+$base-font-size: 16px;
+$base-font-weight: 400;
+$base-line-height: 24px;
+$image-path: '../img';
+$svg-path: $image-path + '/svg';
+
+$roboto: 'Roboto';
+$roboto-slab: 'Roboto Slab';
+
+$primary-font-family: $roboto;
+$secondary-font-family: $roboto-slab;
+
+// Button themes
+$button-themes: (
+  primary: (
+    bgColor: #f00,
+    color: $white,
+    fontSize: 24px,
+    lineHeight: 18px,
+    position: static,
+  ),
+  secondary: (
+    bgColor: #f00,
+    color: $white,
+    fontSize: 30px,
+    lineHeight: 23px
+  ),
+  type: (
+    bgColor: transparent,
+    color: $white,
+    fontSize: 30px,
+    lineHeight: 23px,
+    position: absolute
+  ),
+  tag: (
+    bgColor: transparent,
+    color: $white,
+    fontSize: 30px,
+    lineHeight: 23px,
+    position: absolute,
+  ),
+  inline: (
+    color: #f00,
+    fontSize: 24px,
+    lineHeight: 18px
+  )
+);
+
+$wrapper: 1300;
+$desktop: $wrapper;
+$laptop: 1024;
+$tablet: 768;
+$phablet: 667;
+$mobile: 480;
+
+$module-padding: 40px;
+$half-module-padding: $module-padding / 2;
+
+$category-colors: (
+  'comic': $tangerine,
+  'movie': $persian-rose,
+  'game': $salem
+);
