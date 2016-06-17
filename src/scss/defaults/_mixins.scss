@@ -45,6 +45,9 @@
 @function pc($target, $context, $padding:0) {
   @return ($target / ($context - $padding)) * 100%;
 }
+@function rem($value) {
+  @return ($value / 16px);
+}
 @mixin rspw($max-width, $context, $padding:0, $margin:0) {
   @if ($context) {
     @if ($max-width) {
@@ -161,17 +164,30 @@
   font-family: $font-family;
   font-weight: $font-weight;
 }
-@mixin breakpoint($breakpoint:null, $min-max:max) {
-  @if ($breakpoint) {
-    $rem: ($breakpoint / 16) + rem;
-    @if $min-max == 'min' {
-      @media screen and (min-width: #{$rem}) {
-        @content;
-      }
-    } @else {
-      @media screen and (max-width: #{$rem}) {
-        @content;
-      }
+
+// ==================================================
+// @mixin mediaQuery();
+// ==================================================
+// Supports
+// @include mediaquery($max, $phablet) {}
+// @include mediaquery('', $phablet, $tablet) {}
+// @include mediaquery($min, $tablet) {}
+// @include mediaquery($min, $desktop) {}
+
+@mixin mediaquery($constraint, $viewport1, $viewport2: null) {
+  $vp1: $viewport1 / 16;
+  @if $constraint == $min {
+    @media screen and ($min: #{$vp1}em) {
+      @content;
+    }
+  } @else if $constraint == $max {
+    @media screen and ($max: #{$vp1}em) {
+      @content;
+    }
+  } @else {
+    $vp2: $viewport2 / 16;
+    @media screen and ($min: #{$vp1}em) and ($max: #{$vp2}em) {
+      @content;
     }
   }
 }

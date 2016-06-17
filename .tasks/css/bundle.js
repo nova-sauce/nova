@@ -12,7 +12,6 @@
 
     // Prepare bundle
     function processBundle(name, glob, options) {
-
       return gulp.src(glob)
 
         // Process Sass
@@ -28,7 +27,7 @@
 
         // Rename, write to files
         .pipe(plugins.concat(name + '.min.css'))
-        .pipe(plugins.sourcemaps.write('.', { sourceRoot: '/scss/' }))
+        .pipe(plugins.sourcemaps.write('.', {sourceRoot: '/scss/'}))
         .pipe(gulp.dest(plugins.path.join(paths.build, 'css')))
 
         // Reload in browser
@@ -38,36 +37,35 @@
 
     // Return module
     return function() {
-
       // Get base CSS config
-      var settings = plugins.getModule('css/config');
+      var settings = plugins.getModule('css/config'),
 
-      // Module options
-      var options = {
+        // Module options
+        options = {
 
-        autoprefixer: {
-          browsers: ['> 2%'],
-          cascade: false,
-          map: true,
-          remove: true
-        },
-
-        csswring: {
-          removeAllComments: true
-        },
-
-        mqpacker: {
-          sort: true
-        },
-
-        sass: {
-          errLogToConsole: true,
-          eyeglass: {
-            enableImportOnce: true
+          autoprefixer: {
+            browsers: ['> 2%'],
+            cascade: false,
+            map: true,
+            remove: true
           },
-          outputStyle: 'compressed'
-        }
-      };
+
+          csswring: {
+            removeAllComments: true
+          },
+
+          mqpacker: {
+            sort: true
+          },
+
+          sass: {
+            errLogToConsole: true,
+            eyeglass: {
+              enableImportOnce: true
+            },
+            outputStyle: 'compressed'
+          }
+        };
 
       // Process each bundle
       return plugins.eventStream.merge(
