@@ -43,7 +43,7 @@
   @content;
 }
 @function pc($target, $context, $padding:0) {
-  @return ($target / ($context - $padding)) * 100%;
+  @return percentage($target / ($context - $padding));
 }
 @function rem($value) {
   @return ($value / 16px);
@@ -52,7 +52,7 @@
   @if ($context) {
     @if ($max-width) {
       $newcontext: ($context - $padding - $margin);
-      max-width: #{$max-width}px;
+      max-width: $max-width;
       width: pc($max-width, $newcontext);
     }
   }

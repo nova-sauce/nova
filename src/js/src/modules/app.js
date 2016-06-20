@@ -18,6 +18,9 @@ module.exports = function App() {
     if (document.querySelectorAll('.carousel').length) {
       new (require('partials/slick'))();
     }
+    if (document.querySelectorAll('.feed').length) {
+      new (require('partials/equalheights'))();
+    }
     new (require('partials/bindevents'))();
   };
 
