@@ -23,6 +23,7 @@
     $article-context: 390px;
     @include rspw(390px, $feed-context);
     margin-bottom: 45px;
+    margin-top: 15px;
     margin-left: pc(15px, $feed-context);
     margin-right: pc(15px, $feed-context);
     height: 500px;
@@ -386,11 +387,50 @@
   .soundtracks {
     float: left;
     @include rspw(390px, $feed-context);
-    margin-bottom: 50px;
+    margin-bottom: 65px;
     margin-left: pc(15px, $feed-context);
     margin-right: pc(15px, $feed-context);
   }
   .ad {
     box-shadow: none;
+    display: none;
+  }
+  @include mediaquery($max, 1093) {
+    &__article,
+    .ad,
+    .soundtracks {
+      @include rspw(516px, 1093px);
+    }
+    &__article {
+      &--featured {
+        $featured-context: 1063px;
+        @include rspw(1063px, 1093px);
+        .feed__article__image {
+          @include rspw(600px, $featured-context);
+        }
+        .feed__article__meta {
+          left: pc(600px, $featured-context);
+        }
+        .feed__article__details__content {
+          left: pc(600px, $featured-context);
+        }
+        .feed__article__content {
+          margin-left: pc(600px, $featured-context);
+        }
+      }
+    }
+    .ad,
+    .soundtracks {
+      margin-bottom: 45px;
+    }
+  }
+  @include mediaquery($max, 798) {
+    &__article,
+    .ad,
+    .soundtracks {
+      float: none;
+      max-width: none;
+      width: 100%;
+    }
   }
 }
