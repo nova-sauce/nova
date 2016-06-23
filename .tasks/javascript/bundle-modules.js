@@ -52,7 +52,7 @@
 				// Start sourcemaps, uglify and switch to build location
 				.pipe(plugins.sourcemaps.init())
         .pipe(plugins.babel({presets: ['es2015']}))
-				.pipe(plugins.uglify())
+				// .pipe(plugins.uglify())
 				.pipe(plugins.concat('nova.min.js'))
 
 				// Write to files
