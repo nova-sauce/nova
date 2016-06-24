@@ -396,12 +396,12 @@
     box-shadow: none;
     display: none;
   }
-  @include mediaquery($max, 1093) {
-    $feed-context: 1093px - 30px;
+  @include mediaquery($max, 1150) {
+    $feed-context: 1150px - 30px;
     &__article,
     .ad,
     .soundtracks {
-      @include rspw(524px, $feed-context);
+      @include rspw(552px, $feed-context);
       margin-left: 0;
       margin-right: pc(15px, $feed-context);
     }
@@ -413,8 +413,8 @@
     }
     &__article {
       &--featured {
-        $featured-context: 1063px;
-        @include rspw(1063px, $feed-context);
+        $featured-context: 1150px - 30;
+        @include rspw($featured-context, $feed-context);
         margin-right: 0;
         margin-left: 0;
         .feed__article__image {
@@ -448,6 +448,73 @@
       width: 100%;
       margin-right: 0 !important;
       height: auto !important;
+    }
+    &__article {
+      &--featured {
+        max-width: none;
+        width: 100%;
+        .feed__article__image {
+          width: 100%;
+          max-width: none;
+          height: 250px;
+          position: static;
+        }
+        .feed__article__meta {
+          left: auto;
+        }
+        .feed__article__details__content {
+          top: 250px;
+          bottom: auto;
+          left: auto;
+          height: 250px;
+          &--active {
+            left: auto;
+            top: 0;
+          }
+        }
+        .feed__article__content {
+          height: auto;
+          padding-top: 0;
+          margin-left: 0;
+          .feed__article__content__summary {
+            position: static;
+            bottom: auto;
+          }
+          .title {
+            font-size: 38px;
+            line-height: 44px;
+          }
+          .buttons {
+            width: 120px;
+            height: 50px;
+            left: 45px;
+            top: 0;
+            &__button {
+              transform: translateY(-50%) scale(1);
+              top: auto;
+              &--active {
+                transform: translateY(-50%) scale(1.48);
+              }
+              &:first-child {
+                margin-right: 20px;
+                margin-bottom: 0;
+                top: 0;
+                left: 0;
+              }
+              &:last-child {
+                bottom: auto;
+                right: 0;
+              }
+              &:hover {
+                transform: translateY(-50%) scale(1.09);
+                &.buttons__button--active {
+                  transform: translateY(-50%) scale(1.48);
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

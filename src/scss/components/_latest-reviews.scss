@@ -101,4 +101,13 @@
       z-index: 1;
     }
   }
+  @include mediaquery($max, 1360) {
+    max-width: 937.5px;
+  }
+  @include mediaquery($max, 1045) {
+    max-width: 625px;
+  }
+  @include mediaquery($max, 735) {
+    max-width: 75%;
+  }
 }
