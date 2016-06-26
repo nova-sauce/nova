@@ -15,11 +15,13 @@
     background-color: $silver;
     padding-top: 130px;
     padding-bottom: 130px;
-    padding-left: pc(150px, $desktop);
-    padding-right: pc(150px, $desktop);
     @include rspw($brand-info-content, $desktop);
+    $logo-context: 404px;
     &__logo {
       font-size: 0;
+      margin: 0 auto;
+      max-width: $logo-context;
+      width: 100%;
       .logo,
       .logo-text {
         display: inline-block;
@@ -28,7 +30,7 @@
       .logo {
         height: 77px;
         width: 63px;
-        margin-right: pc(20px, $brand-info-content, 300px);
+        margin-right: 20px;
       }
       .logo-text {
         fill: $black;
@@ -37,7 +39,10 @@
       }
     }
     &__disclaimer {
+      margin: 0 auto;
+      max-width: $logo-context;
       padding-left: 83px;
+      width: 100%;
       p {
         font-size: 14px;
         @include letter-spacing(60, 14);
@@ -57,6 +62,9 @@
       margin-bottom: 40px;
       .icon {
         margin-right: pc(25px, $info-context, 200px);
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
     &__links {
@@ -78,6 +86,51 @@
         &:last-child {
           margin-right: 0;
         }
+      }
+    }
+  }
+  @include mediaquery($max, 1096) {
+    display: block;
+    &__brand-info,
+    &__info {
+      float: none;
+      min-height: 0;
+      max-width: none;
+      width: 100%;
+    }
+    &__info {
+      .social-icons,
+      &__links {
+        text-align: center;
+      }
+    }
+  }
+  @include mediaquery($max, 548) {
+    &__info {
+      &__links {
+        ul {
+          display: block;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  @include mediaquery($max, 448) {
+    &__brand-info {
+      &__logo {
+        .logo,
+        .logo-text {
+          display: block;
+          margin: 0 auto;
+        }
+        .logo,
+        .logo-text {
+          margin-bottom: 20px;
+        }
+      }
+      &__disclaimer {
+        padding-left: 0;
+        text-align: center;
       }
     }
   }
