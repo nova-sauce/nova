@@ -200,7 +200,7 @@
           display: inline-block;
           height: 50px;
           background-color: #008fc8;
-          border-radius: 102px;
+          border-radius: 50%;
           transition: transform 500ms $easeOutQuint;
           &--tags {
             @include background-icon('tags-icon');
@@ -248,7 +248,7 @@
         padding-top: 0;
         text-align: center;
         .icon {
-          border-radius: 230px;
+          border-radius: 50%;
           overflow: hidden;
           width: 115px;
           height: 115px;
@@ -512,6 +512,106 @@
                 }
               }
             }
+          }
+        }
+      }
+    }
+  }
+  @include mediaquery($max, 414) {
+    &__article {
+      $article-context: 376px;
+      &__image {
+        height: 180px;
+      }
+      &__meta {
+        padding-left: 25px;
+        padding-right: 25px;
+        font-size: 10px;
+      }
+      &__details {
+        &__content {
+          top: 180px;
+          height: 180px;
+          padding: 25px 20px;
+          .label {
+            font-size: 18px;
+          }
+          .list{
+            &--tags {
+              li {
+                font-size: 11px;
+              }
+            }
+          }
+          &--active {
+            top: 0;
+          }
+        }
+      }
+      &__content {
+        .title {
+          font-size: 26px;
+          line-height: 30px;
+        }
+        .text {
+          font-size: 13px;
+          line-height: 18px;
+        }
+        .buttons {
+          height: 40px;
+          width: 95px;
+          left: pc(25px, $article-context);
+          &__button {
+            width: 40px;
+            height: 40px;
+            &:first-child {
+              margin-right: 15px;
+            }
+          }
+        }
+        &__summary {
+          padding-left: pc(25px, $article-context);
+          padding-top: 30px;
+          padding-bottom: 25px;
+          padding-right: pc(25px, $article-context);
+        }
+      }
+      &--video {
+        .feed__article__image {
+          height: 300px;
+        }
+        .feed__article__content {
+          &__summary {
+            transform: translateY(-12%);
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+        }
+      }
+      &--featured {
+        margin-top: -63px;
+        .feed__article__image {
+          height: 180px;
+        }
+        .feed__article__details__content {
+          top: 180px;
+          height: 180px;
+          padding: 25px 20px;
+          &--active {
+            top: 0;
+          }
+        }
+        .feed__article__content {
+          top: 0;
+          height: auto;
+          .title {
+            font-size: 26px;
+            line-height: 30px;
+          }
+          .buttons {
+            height: 40px;
+            width: 95px;
+            left: pc(25px, $article-context);
           }
         }
       }

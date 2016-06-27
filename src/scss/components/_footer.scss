@@ -98,6 +98,10 @@
       max-width: none;
       width: 100%;
     }
+    &__brand-info {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
     &__info {
       .social-icons,
       &__links {
@@ -118,19 +122,23 @@
   @include mediaquery($max, 448) {
     &__brand-info {
       &__logo {
-        .logo,
-        .logo-text {
-          display: block;
-          margin: 0 auto;
+        text-align: center;
+        .logo {
+          height: calc(77px / 2);
+          width: calc(63px / 2);
         }
-        .logo,
         .logo-text {
-          margin-bottom: 20px;
+          max-width: calc(321px / 2);
+          max-height: calc(32px / 2);
         }
       }
       &__disclaimer {
-        padding-left: 0;
+        padding-left: 30px;
         text-align: center;
+        p {
+          font-size: 7px;
+          line-height: 15px;
+        }
       }
     }
   }

@@ -86,4 +86,26 @@
       }
     }
   }
+  @include mediaquery($max, 414) {
+    padding-top: 70px;
+    height: 264px;
+    &__title {
+      position: relative;
+      height: 53px;
+    }
+    .logo {
+      max-width: calc(89px/2);
+      max-height: calc(108px/2);
+    }
+    .logo-text {
+      max-width: calc(362px/2);
+      max-height: calc(38px/2);
+    }
+    &__logo {
+      height: calc(108px/2);
+    }
+    &__by-line {
+      display: none;
+    }
+  }
 }

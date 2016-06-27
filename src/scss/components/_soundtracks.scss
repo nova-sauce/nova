@@ -56,5 +56,19 @@
         }
       }
     }
+    @include mediaquery($max, 414) {
+      &:before {
+        width: 80px;
+        height: 3px;
+      }
+      .soundstracks__label {
+        font-size: 26px;
+        line-height: 30px;
+      }
+      .soundstracks__track {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
   }
 }

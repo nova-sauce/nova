@@ -203,7 +203,7 @@
         }
       }
       &--active {
-        height: 100%;
+        height: 100vh;
         opacity: 1;
         visibility: visible;
       }
@@ -219,6 +219,47 @@
         width: 100%;
         z-index: 98;
         opacity: .4;
+      }
+    }
+  }
+  @include mediaquery($max, 768) {
+    &__nav-controls {
+      // position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background-color: #191919;
+      text-align: right;
+      // z-index: 100;
+      &__control {
+        height: 50px;
+        .icon {
+          height: 50px;
+          line-height: 50px;
+          svg {
+            fill: #ed217c;
+          }
+        }
+        &--search,
+        &--nav {
+          width: 50px
+        }
+      }
+    }
+    &__modals {
+      &__modal {
+        position: absolute;
+        padding-top: 50px;
+      }
+    }
+  }
+  @media screen and (max-height: 800px) {
+    &__modals {
+      &__modal {
+        z-index: 100;
+        height: 100vh;
       }
     }
   }
