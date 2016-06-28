@@ -129,7 +129,11 @@
                   background-position: center center;
                   background-size: 21px 24px;
                 }
+                font-size: 0;
                 width: 82px;
+                text-transform: uppercase;
+                color: #fff;
+                @extend %RobotoBold;
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -146,7 +150,6 @@
               font-size: 16px;
               color: $mine-shaft;
               line-height: 14px;
-              margin-bottom: 15px;
               display: inline-block;
               @extend %RobotoSlabBold;
             }
@@ -158,6 +161,7 @@
                 color: $razzmatazz;
                 display: inline-block;
                 vertical-align: top;
+                margin-top: 15px;
                 a {
                   color: $razzmatazz;
                   display: inline-block;
@@ -222,6 +226,47 @@
       }
     }
   }
+  @include mediaquery($max, 1115) {
+    &__modals {
+      &__modal {
+        &--search {
+          .container {
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+  @include mediaquery($max, 875) {
+    &__modals {
+      &__modal {
+        &--search {
+          .container {
+            .search-form {
+              &__input {
+                input {
+                  &.field {
+                    font-size: 16px;
+                  }
+                }
+              }
+              &__popular-results {
+                &__label {
+                  margin-bottom: 5px;
+                }
+                &__list {
+                  li {
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   @include mediaquery($max, 768) {
     &__nav-controls {
       // position: fixed;
@@ -252,6 +297,40 @@
       &__modal {
         position: absolute;
         padding-top: 50px;
+        &--search {
+          .container {
+            .search-form {
+              &__input {
+                height: auto;
+                input {
+                  &.field {
+                    padding: 20px;
+                    font-size: 12px;
+                  }
+                  &.submit {
+                    position: static;
+                    background: none;
+                    display: block;
+                    height: 40px;
+                    width: 100%;
+                    background-color: #00a2e3;
+                    font-size: 14px;
+                    @include letter-spacing(60, 14);
+                  }
+                }
+              }
+              &__popular-results {
+                padding: 50px 30px;
+                &__list {
+                  li {
+                    font-size: 12px;
+                    margin-top: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
