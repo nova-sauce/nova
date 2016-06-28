@@ -308,6 +308,7 @@
         bottom: 0;
         left: pc(800px, $featured-context);
         height: 100%;
+        width: pc(800px, $featured-context);
         &--active {
           left: 0;
         }
@@ -467,6 +468,7 @@
           bottom: auto;
           left: auto;
           height: 250px;
+          width: 100%;
           &--active {
             left: auto;
             top: 0;
