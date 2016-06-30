@@ -34,12 +34,12 @@
 				.pipe(buffer())
 
 				// Uglify and switch to build location
-				.pipe(plugins.uglify())
+				// .pipe(plugins.uglify())
 				.pipe(plugins.concat('libs.min.js'))
 
 				// Start sourcemaps, uglify and switch to build location
 				.pipe(plugins.sourcemaps.init())
-				.pipe(plugins.uglify())
+				// .pipe(plugins.uglify())
 				.pipe(plugins.concat('libs.min.js'))
 
 				// Write to files
