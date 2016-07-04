@@ -5,49 +5,26 @@
 	module.exports = function(paths, gulp, plugins) {
 
 		// Child modules
-		var browserify = require('browserify'),
-			buffer = require('vinyl-buffer'),
-			source = require('vinyl-source-stream');
-
-		// Configure
-		var b = browserify({
-			debug: true
-		});
+		var buffer = require('vinyl-buffer');
 
 		// Return module
 		return function() {
+      return gulp.src(['node_modules/jquery/dist/jquery.min.js', 'node_modules/slick-carousel/slick/slick.min.js'])
+        .pipe(plugins.plumber())
 
-			// Get base JavaScript config
-			var settings = plugins.getModule('javascript/config'),
-				utilities = settings.dependencies;
+        // Load files
+			  .pipe(buffer())
 
-			// Mark all library includes as external
-			for (var utility in utilities) {
-				b.require(utilities[utility], { expose: utility });
-			}
-
-			return b.bundle()
-				.pipe(plugins.plumber())
-
-				// Load files
-				.pipe(source(plugins.path.resolve(paths.src, 'js/src/nova.js')))
-				.pipe(buffer())
-
-				// Uglify and switch to build location
-				// .pipe(plugins.uglify())
-				.pipe(plugins.concat('libs.min.js'))
-
-				// Start sourcemaps, uglify and switch to build location
-				.pipe(plugins.sourcemaps.init())
-				// .pipe(plugins.uglify())
-				.pipe(plugins.concat('libs.min.js'))
+        // Start sourcemaps, concat and switch to build location
+        .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.concat('libs.min.js', {newLine: '\n\n;\n\n'}))
 
 				// Write to files
-				.pipe(plugins.sourcemaps.write('.'))
+        .pipe(plugins.sourcemaps.write('.'))
 				.pipe(gulp.dest(plugins.path.resolve(paths.build, 'js')))
 
 				// Filter out sourcemaps, reload in browser
 				.pipe(plugins.filter('**/*.js'))
-				.pipe(plugins.browserSync.reload({ stream: true }));
+				.pipe(plugins.browserSync.reload({stream: true}));
 		};
 	};

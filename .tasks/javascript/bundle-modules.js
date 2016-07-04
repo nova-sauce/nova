@@ -5,43 +5,10 @@
   module.exports = function(paths, gulp, plugins) {
 
     // Child modules
-    var buffer = require('vinyl-buffer'),
-      // browserify = require('browserify'),
-      source = require('vinyl-source-stream');
-
-    // Get base JavaScript config
-    // var settings = plugins.getModule('javascript/config'),
-    //  utilities = settings.dependencies,
-  //     utility;
-
-    // Default settings
-    // settings.browserify = {
-    //  alias: [],
-    //  debug: true,
-    //  external: [],
-    //  entries: plugins.path.resolve(paths.src, 'js/src/nova.js'),
-    //  paths: [
-    //    plugins.path.resolve(paths.src, 'js/src/')
-    //  ]
-    // };
-
-    // Mark all library includes as external
-    // for (utility in utilities) {
-    //  settings.browserify.alias.push(utilities[utility] + ':' + utility);
-    //  settings.browserify.external.push(utilities[utility]);
-    // }
-
-    // Configure
-    // var b = browserify(settings.browserify);
-
-    // Mark all library includes as external
-    // for (utility in utilities) {
-    //  b.external(utility);
-    // }
+    var buffer = require('vinyl-buffer');
 
     // Return module
     return function() {
-
       return gulp.src(plugins.path.resolve(paths.src, 'js/src/*.js'))
         .pipe(plugins.plumber())
 

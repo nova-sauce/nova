@@ -21,6 +21,7 @@
         headerTrigger: $('.header__nav-controls__control .icon')
       }
     },
+
     viewport = () => {
       var ee = window, aa = 'inner';
       if (!('innerWidth' in window)) {
@@ -29,19 +30,6 @@
       }
 
       return {width: ee[aa + 'Width'], height: ee[aa + 'Height']};
-    },
-
-    resizeFunctions = () => {
-      settings.vpWidth = viewport().width;
-
-      // if (settings.vpWidth > 765) {}
-    },
-
-    windowResize = () => {
-      if ($(window).width() !== settings.lastWidth) {
-        resizeFunctions();
-        settings.lastWidth = $(window).width();
-      }
     },
 
     heightsEqualizer = (el) => {
@@ -67,7 +55,24 @@
       }
     },
 
+    resizeFunctions = () => {
+      settings.vpWidth = viewport().width;
+      if (settings.vpWidth >= 796) {
+        heightsEqualizer();
+      } else {
+        $('[data-key="sameHeights"]').css('height', 'auto');
+      }
+    },
+
+    windowResize = () => {
+      if ($(window).width() !== settings.lastWidth) {
+        resizeFunctions();
+        settings.lastWidth = $(window).width();
+      }
+    },
+
     bindEvents = () => {
+      settings.vpWidth = viewport().width;
       $el.globalNav.headerTrigger.on('click', (el) => {
         $this = $(el.target).parent();
         if ($this.hasClass('header__nav-controls__control--search')) {
@@ -146,19 +151,11 @@
         });
       });
 
-      if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', () => {
-          heightsEqualizer();
-        });
-
-        window.addEventListener('resize', () => {
-          heightsEqualizer();
-        });
-      }
-
-      setTimeout(() => { // set 1 second timeout for having all fonts loaded
+      if (settings.vpWidth >= 796) {
         heightsEqualizer();
-      }, 1000);
+      } else {
+        $('[data-key="sameHeights"]').css('height', 'auto');
+      }
 
       $(window).on('resize', windowResize);
     };
