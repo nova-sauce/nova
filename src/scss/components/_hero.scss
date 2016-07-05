@@ -1,16 +1,42 @@
 .hero {
   background-position: center center;
   background-size: cover;
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding-bottom: 120px;
+  padding-top: 120px;
   max-height: 738px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  &__copy {
+    position: relative;
+    z-index: 1;
+    max-width: 740px;
+    margin: 0 auto;
+  }
   &__logo {
     position: relative;
     height: 152px;
   }
   &__title {
     margin-top: 20px;
+    .title {
+      font-size: 78px;
+      line-height: 88px;
+      color: $white;
+      @extend %RobotoSlabLight;
+    }
+  }
+  &__image {
+    background-image: url('/img/article-hero.jpg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 0;
+    width: 100%;
+    opacity: .3;
   }
   .logo {
     max-width: 126px;
@@ -27,6 +53,14 @@
   }
   &__by-line {
     margin-top: 25px;
+    p {
+      text-transform: uppercase;
+      color: $white;
+      font-size: 16px;
+      line-height: 28px;
+      @include letter-spacing(10, 16);
+      @extend %Roboto;
+    }
     ul {
       font-size: 0;
       li {
@@ -83,6 +117,31 @@
             }
           }
         }
+      }
+    }
+  }
+  &__social {
+    font-size: 0;
+    margin-top: 20px;
+    &-link {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      vertical-align: top;
+      border-radius: 50%;
+      background-color: #008fc8;
+      background-position: center center;
+      background-size: 20px 20px;
+      cursor: pointer;
+      margin: 0 12px;
+      &--tags {
+        @include background-icon('tags-icon');
+      }
+      &--share {
+        @include background-icon('social-icon');
+      }
+      &--comments {
+        @include background-icon('comments-icon');
       }
     }
   }

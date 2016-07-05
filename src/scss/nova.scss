@@ -17,12 +17,15 @@
         'components/site-nav',
         'components/soundtracks',
         'components/feed',
+        'components/article-meta',
         'components/ad',
         'components/latest-reviews',
         'components/carousel',
-        'components/load-more';
+        'components/load-more',
+        'components/video';
 
 //
 //  Import the layouts used for different page types
 //
-@import 'layouts/home';
+@import 'layouts/home',
+        'layouts/detail';

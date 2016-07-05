@@ -3,6 +3,19 @@
   background-size: 5px 5px;
   background-position: left top;
 }
+.section {
+  position: relative;
+}
+.content {
+  position: relative;
+  margin-top: -64px;
+  margin-bottom: 64px;
+  &-inner {
+    max-width: 1260px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+}
 svg {
   fill: $white;
   &.search-icon {
@@ -25,6 +38,29 @@ svg {
   }
   width: 100%;
   height: 100%;
+}
+.square-pattern {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  display: block;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  width: 100%;
+  &:before {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+    background-image: url('/img/square-pattern.png');
+  }
 }
 .icon {
   display: inline-block;
@@ -67,6 +103,24 @@ svg {
   }
   &--play-button {
     @include background-icon('play-icon');
+    border-radius: 50%;
+    overflow: hidden;
+    width: 115px;
+    height: 115px;
+    display: inline-block;
+    background-size: 115px 115px;
+    margin-bottom: 10px;
+    position: relative;
+    a {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: block;
+    }
   }
 }
 .social-icons {

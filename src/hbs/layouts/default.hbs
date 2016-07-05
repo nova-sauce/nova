@@ -23,13 +23,13 @@
 		{{!-- <style>{{outputFileContent "./dist/css/nova.min.css"}}</style> --}}
 		<link rel="stylesheet" href="/css/nova.min.css?v={{timestamp}}">
 	</head>
-	<body class="page page--{{pagename}}">
+	<body class="page page--{{pagename}}{{#if classes}} {{#each classes}}page--{{.}}{{#unless @last}} {{/unless}}{{/each}}{{/if}}">
     <div class="container">
       <div class="site-wrapper">
         {{> header }}
-        <main class="content">
+        <div class="components">
 		      {% body %}
-        </main>
+        </div>
         {{> footer }}
       </div>
     </div>
