@@ -1,0 +1,19 @@
+.section--pull-quote {
+  background-image: url('/img/pull-quote-bg.png');
+  background-size: cover;
+  background-position: center center;
+  padding: 100px 0;
+  text-align: center;
+  margin: -50px 0;
+  .blockquote {
+    padding: 0 15%;
+  }
+  .blockquote, .blockquote p {
+    font-size: 38px;
+    line-height: 52px;
+    @include letter-spacing(10, 38);
+    color: #fff;
+    @extend %RobotoSlab;
+    display: inline-block;
+  }
+}

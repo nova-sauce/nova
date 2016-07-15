@@ -4,17 +4,18 @@
   background-position: left top;
 }
 .section {
-  position: relative;
+  &-wrapper {
+    max-width: 1260px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+  }
 }
 .content {
   position: relative;
   margin-top: -64px;
   margin-bottom: 64px;
-  &-inner {
-    max-width: 1260px;
-    padding: 0 15px;
-    margin: 0 auto;
-  }
 }
 svg {
   fill: $white;
@@ -100,6 +101,11 @@ svg {
   &--close {
     width: 20px;
     height: 20px;
+  }
+  &--share {
+    @include background-icon('social-icon');
+    width: 25px;
+    height: 26px;
   }
   &--play-button {
     @include background-icon('play-icon');

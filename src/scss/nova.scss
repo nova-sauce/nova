@@ -6,7 +6,8 @@
         'defaults/mixins',
         'defaults/placeholders',
         'defaults/reset',
-        'defaults/defaults';
+        'defaults/defaults',
+        'defaults/open-html';
 
 //
 //  Import Global Components
@@ -22,7 +23,12 @@
         'components/latest-reviews',
         'components/carousel',
         'components/load-more',
-        'components/video';
+        'components/video',
+        'components/copy',
+        'components/gallery',
+        'components/pull-quote',
+        'components/share-this',
+        'components/slick';
 
 //
 //  Import the layouts used for different page types

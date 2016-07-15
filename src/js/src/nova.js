@@ -151,6 +151,13 @@
         });
       });
 
+      $('.section--gallery').each(function() {
+        $(this).find('.slides').slick({
+          slidesToShow: 1,
+          adaptiveHeight: true
+        });
+      });
+
       if (settings.vpWidth >= 796) {
         heightsEqualizer();
       } else {

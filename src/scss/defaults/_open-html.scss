@@ -1,0 +1,18 @@
+.open-html {
+  font-size: 18px;
+  line-height: 35px;
+  @include letter-spacing(10, 18);
+  color: #333;
+  @extend %Roboto;
+  p {
+    font-size: 18px;
+    line-height: 35px;
+    @include letter-spacing(10, 18);
+    color: #333;
+    @extend %Roboto;
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
