@@ -7,6 +7,29 @@
   margin: -50px 0;
   .blockquote {
     padding: 0 15%;
+    position: relative;
+    &:before,
+    &:after {
+      width: 33px;
+      height: 25px;
+      display: block;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      content: '';
+      @include background-icon('quote-icon') {
+        background-repeat: no-repeat;
+      }
+    }
+    &:before {
+      left: 10%;
+      background-position: 10% center;
+    }
+    &:after {
+      right: 10%;
+      transform: translateY(-50%) rotate(180deg);
+      background-position: 90% center;
+    }
   }
   .blockquote, .blockquote p {
     font-size: 38px;
