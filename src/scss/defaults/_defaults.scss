@@ -12,6 +12,45 @@
     width: 100%;
   }
 }
+.disqus {
+  background-color: #fff;
+  padding: 50px 0;
+}
+.brand-divider {
+  text-align: center;
+  position: relative;
+  margin: 20px -5%;
+  img {
+    display: inline-block;
+    max-width: 27px;
+    max-height: 34px;
+  }
+  &:after,
+  &:before {
+    content: '';
+    height: 1px;
+    width: 32px;
+    position: absolute;
+    display: inline-block;
+    background-color: #aeaeae;
+    width: 47%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+  @include mediaquery($max, 860) {
+    width: 45%;
+  }
+  @include mediaquery($max, 530) {
+    width: 43%;
+  }
+}
 .content {
   position: relative;
   margin-top: -64px;

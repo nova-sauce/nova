@@ -316,6 +316,21 @@
       }
     }
   }
+  &__sub-title {
+    font-size: 48px;
+    color: #2e2f30;
+    @extend %RobotoSlabBold;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  &__sub-description {
+    font-size: 22px;
+    @extend %RobotoSlab;
+    color: #2e2f30;
+    margin-top: -55px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
   .ad,
   .soundtracks {
     float: left;
