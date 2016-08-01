@@ -1,0 +1,145 @@
+.footer {
+  background-color: $cod-gray;
+  @include clearfix;
+  display: flex;
+  flex-direction: row;
+  &__brand-info,
+  &__info {
+    float: left;
+    min-height: 354px;
+    flex: 1;
+    justify-content: center;
+  }
+  &__brand-info {
+    $brand-info-content: 683px;
+    background-color: $silver;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    @include rspw($brand-info-content, $desktop);
+    $logo-context: 404px;
+    &__logo {
+      font-size: 0;
+      margin: 0 auto;
+      max-width: $logo-context;
+      width: 100%;
+      .logo,
+      .logo-text {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .logo {
+        height: 77px;
+        width: 63px;
+        margin-right: 20px;
+      }
+      .logo-text {
+        fill: $black;
+        max-width: 321px;
+        max-height: 32px;
+      }
+    }
+    &__disclaimer {
+      margin: 0 auto;
+      max-width: $logo-context;
+      padding-left: 83px;
+      width: 100%;
+      p {
+        font-size: 14px;
+        @include letter-spacing(60, 14);
+      }
+    }
+  }
+  &__info {
+    $info-context: 757px;
+    min-height: 361px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: pc(100px, $desktop);
+    padding-right: pc(100px, $desktop);
+    height: 100%;
+    @include rspw($info-context, $desktop);
+    .social-icons {
+      margin-bottom: 40px;
+      .icon {
+        margin-right: pc(25px, $info-context, 200px);
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    &__links {
+      ul {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: pc(130px, $info-context, 200px);
+        li {
+          color: $white;
+          margin-bottom: 25px;
+          font-size: 12px;
+          line-height: 10px;
+          text-transform: uppercase;
+          @include letter-spacing(60, 12);
+          a {
+            color: $white;
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  @include mediaquery($max, 1096) {
+    display: block;
+    &__brand-info,
+    &__info {
+      float: none;
+      min-height: 0;
+      max-width: none;
+      width: 100%;
+    }
+    &__brand-info {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    &__info {
+      .social-icons,
+      &__links {
+        text-align: center;
+      }
+    }
+  }
+  @include mediaquery($max, 548) {
+    &__info {
+      &__links {
+        ul {
+          display: block;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  @include mediaquery($max, 448) {
+    &__brand-info {
+      &__logo {
+        text-align: center;
+        .logo {
+          height: calc(77px / 2);
+          width: calc(63px / 2);
+        }
+        .logo-text {
+          max-width: calc(321px / 2);
+          max-height: calc(32px / 2);
+        }
+      }
+      &__disclaimer {
+        padding-left: 30px;
+        text-align: center;
+        p {
+          font-size: 7px;
+          line-height: 15px;
+        }
+      }
+    }
+  }
+}

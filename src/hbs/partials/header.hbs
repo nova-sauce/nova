@@ -1,0 +1,50 @@
+<header class="header">
+  <div class="header__nav-controls">
+    <div class="header__nav-controls__control header__nav-controls__control--search" data-control="search">
+      <span class="icon icon--search"><svg class="search-icon"><use xlink:href="#search-icon"></use></svg></span>
+      <span class="icon icon--close"><svg class="close-icon"><use xlink:href="#close-icon"></use></svg></span>
+    </div>
+    <div class="header__nav-controls__control header__nav-controls__control--nav" data-control="nav">
+      <span class="icon icon--nav"><svg class="menu-icon"><use xlink:href="#menu-icon"></use></svg></span>
+      <span class="icon icon--close"><svg class="close-icon"><use xlink:href="#close-icon"></use></svg></span>
+    </div>
+  </div>
+  <div class="header__modals">
+    <div id="search" class="header__modals__modal header__modals__modal--search">
+      <div class="container">
+        <div class="search-form">
+          <div class="search-form__input">
+            <input type="text" value="" class="field" placeholder="Search for News, Reviews or an specific Game, Movie or Comic Book" name="search-input" autocomplete="OFF" />
+            <input type="submit" value="search" name="" class="submit" />
+          </div>
+          <div class="search-form__popular-results">
+            <label class="search-form__popular-results__label">Popular:</label>
+            <ul class="search-form__popular-results__list">
+              <li><a href="#">Uncharted 4</a></li>
+              <li><a href="#">Suicide Squad</a></li>
+              <li><a href="#">Mighty Number 9</a></li>
+              <li><a href="#">The Killing Joke</a></li>
+              <li><a href="#">Game Reviews</a></li>
+              <li><a href="#">Lorem Ipsum</a></li>
+              <li><a href="#">Dolor</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="nav" class="header__modals__modal header__modals__modal--nav">
+      <div class="container">
+        <nav class="site-nav">
+          <ul>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Comics</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__modals__modal__bg" style="background-image: url('/img/menu-bg.jpg');"></div>
+    </div>
+  </div>
+</header>

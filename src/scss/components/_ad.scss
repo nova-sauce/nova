@@ -1,0 +1,17 @@
+.ad {
+  background-color: #027e00;
+  box-shadow: 0 0 147px 0 rgba($black, .35) inset;
+  text-align: center;
+  &--full-width {
+    width: 100%;
+    min-height: 400px;
+    padding-bottom: 50px;
+    margin-bottom: 70px;
+    img {
+      width: 50%;
+    }
+  }
+  &--pull-up {
+    margin-top: -130px;
+  }
+}
