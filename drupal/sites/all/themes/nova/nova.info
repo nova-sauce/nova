@@ -1,0 +1,8 @@
+name = Nova Sauce
+description = A new and exciting responsive theme.
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = css/slick.min.css
+stylesheets[all][] = css/nova.min.css
