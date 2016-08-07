@@ -1,5 +1,5 @@
-/*globals $, window, document, setTimeout*/
-((NS) => {
+/*globals window, document, setTimeout*/
+(($, NS) => {
   'use strict';
   let $this,
     feedContent = '.feed__article__content',
@@ -170,9 +170,9 @@
   NS.init = () => {
     bindEvents();
   };
-})(window.NS = window.NS || {});
+})(jQuery, window.NS = window.NS || {});
 
 // load when ready
-$(() => {
+jQuery(() => {
   window.NS.init();
 });

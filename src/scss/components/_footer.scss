@@ -68,10 +68,13 @@
       }
     }
     &__links {
-      ul {
+      > .menu > .expanded {
         display: inline-block;
         vertical-align: top;
         margin-right: pc(130px, $info-context, 200px);
+        > a {
+          display: none;
+        }
         li {
           color: $white;
           margin-bottom: 25px;

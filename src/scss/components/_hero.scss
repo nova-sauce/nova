@@ -27,7 +27,7 @@
     }
   }
   &__image {
-    background-image: url('/img/article-hero.jpg');
+    background-image: url("#{$image-path}/article-hero.jpg");
     position: absolute;
     top: 0;
     left: 0;

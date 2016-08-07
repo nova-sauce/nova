@@ -26,6 +26,9 @@
 
   gulp.task('clean', plugins.getModule('clean'));
   gulp.task('copy', plugins.getModule('copy'));
+  gulp.task('move-css', plugins.getModule('move/css'));
+  gulp.task('move-js', plugins.getModule('move/js'));
+  gulp.task('move-img', plugins.getModule('move/img'));
   gulp.task('bundle-css', plugins.getModule('css/bundle'));
   gulp.task('lint-modules', plugins.getModule('javascript/lint'));
   gulp.task('bundle-libs', plugins.getModule('javascript/bundle-libs'));
@@ -43,12 +46,12 @@
 
   // Shared build tasks
   gulp.task('build', ['clean'], function(callback) {
-    plugins.runSequence('lint-modules', ['bundle-css', 'bundle-libs', 'bundle-modules'], ['image-optimise', 'image-fallbacks', 'html'], callback);
+    plugins.runSequence('lint-modules', ['bundle-css', 'bundle-libs', 'bundle-modules'], ['image-optimise', 'image-fallbacks', 'html'], 'move-css', 'move-js', 'move-img', callback);
   });
 
   // Default tasks
   gulp.task('default', ['clean'], function(callback) {
-    plugins.runSequence('build', 'copy', callback);
+    plugins.runSequence('build', 'copy', 'move-css', 'move-js', 'move-img', callback);
   });
 
   // Development tasks

@@ -7,15 +7,17 @@ define('IMG_PATH', THEME_PATH . '/img/');
  * Implements hook_preprocess_html().
  */
 function nova_preprocess_html(&$vars) {
-  drupal_add_js(THEME_PATH . '/js/libs/min/modernizr.min.js', array('scope' => 'header_scripts', 'every_page' => TRUE, 'weight' => 0));
-  drupal_add_js(THEME_PATH . '/js/libs/conc/libs.min.js', array('scope' => 'header', 'group' => JS_LIBRARY, 'every_page' => TRUE, 'weight' => 0));
-  drupal_add_js(THEME_PATH . '/js/nova.js', array('scope' => 'header', 'group' => JS_THEME, 'every_page' => TRUE, 'weight' => 1));
+  // drupal_add_js(THEME_PATH . '/js/libs/min/modernizr.min.js', array('scope' => 'header_scripts', 'every_page' => TRUE, 'weight' => 0));
+  drupal_add_js(THEME_PATH . '/js/libs.min.js', array('scope' => 'header', 'group' => JS_LIBRARY, 'every_page' => TRUE, 'weight' => 0));
+  drupal_add_js(THEME_PATH . '/js/nova.min.js', array('scope' => 'header', 'group' => JS_THEME, 'every_page' => TRUE, 'weight' => 1));
+
+  $current_entity = menu_get_object('node');
 
   if ($current_entity && isset($current_entity->type)) {
     $vars['theme_hook_suggestions'][] = 'html__' . $current_entity->type;
     switch ($current_entity->type) {
-      case 'test':
-        $vars['classes_array'][] = 'test';
+      case 'landing_page':
+        $vars['classes_array'][] = 'page';
         break;
       default:
         // do something
@@ -28,6 +30,15 @@ function nova_preprocess_html(&$vars) {
       $vars['classes_array'][] = $current_entity->vocabulary_machine_name . '-listing';
     }
   }
+
+  // Get the entire main menu tree.
+  $main_menu_tree = menu_tree_all_data('main-menu');
+  // Add the rendered output to the $main_menu_expanded variable.
+  $vars['main_menu'] = menu_tree_output($main_menu_tree);
+  // Get the entire foter menu menu tree.
+  $footer_menu_menu_tree = menu_tree_all_data('menu-footer-menu');
+  // Add the rendered output to the $footer_menu_menu_tree variable.
+  $vars['footer_menu_menu'] = menu_tree_output($footer_menu_menu_tree);
 }
 
 /**

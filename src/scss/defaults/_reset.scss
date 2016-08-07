@@ -74,7 +74,7 @@ html {
 }
 body {
   background-color: $alto;
-  background-image: url('/img/main-bg-pattern.png');
+  background-image: url("#{$image-path}/main-bg-pattern.png");
   background-position: center top;
   background-size: 100% auto;
   color: $black;

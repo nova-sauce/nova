@@ -51,12 +51,14 @@
     "run-sequence": "^1.1.5",
     "slick-carousel": "^1.6.0",
     "vinyl-buffer": "^1.0.0",
+    "vinyl-fs": "^2.4.3",
     "vinyl-source-stream": "^1.1.0"
   },
   "config": {
     "paths": {
       "src": "src/",
       "build": "dist/",
+      "drupal": "drupal/sites/all/themes/nova/",
       "tasks": ".tasks/"
     }
   }

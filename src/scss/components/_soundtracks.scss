@@ -4,7 +4,7 @@
       width: 100px;
       height: 6px;
       background-color: #ff1d8c;
-      background-image: url('/img/line-stripes-pattern.png');
+      background-image: url("#{$image-path}/line-stripes-pattern.png");
       background-size: 5px 5px;
       background-position: left top;
       content: '';

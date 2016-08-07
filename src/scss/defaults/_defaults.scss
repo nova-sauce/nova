@@ -1,5 +1,5 @@
 .site-wrapper {
-  background-image: url('/img/body-stripes-pattern.png');
+  background-image: url("#{$image-path}/body-stripes-pattern.png");
   background-size: 5px 5px;
   background-position: left top;
 }
@@ -99,7 +99,7 @@ svg {
     height: 100%;
     width: 100%;
     content: '';
-    background-image: url('/img/square-pattern.png');
+    background-image: url("#{$image-path}/square-pattern.png");
   }
 }
 .icon {

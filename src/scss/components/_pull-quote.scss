@@ -1,5 +1,5 @@
 .section--pull-quote {
-  background-image: url('/img/pull-quote-bg.png');
+  background-image: url("#{$image-path}/pull-quote-bg.png");
   background-size: cover;
   background-position: center center;
   padding: 100px 0;

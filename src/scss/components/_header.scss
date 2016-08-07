@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+  z-index: 10;
   &__nav-controls {
     position: absolute;
     right: 40px;
@@ -193,7 +195,7 @@
         background-color: $razzmatazz;
         transition: all .3s cubic-bezier(.7, .01, .3, 1);
         &:after {
-          background-image: url('/img/square-pattern.png');
+          background-image: url("#{$image-path}/square-pattern.png");
           position: absolute;
           content: '';
           height: 100%;

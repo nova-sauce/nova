@@ -89,7 +89,7 @@
                 margin-left: 10px;
                 color: $white;
               }
-              &:first-child {
+              &:last-child {
                 &:after {
                   content: none;
                   padding-left: 0;
@@ -112,7 +112,7 @@
     }
     &__content {
       background-color: $gallery;
-      background-image: url('/img/stripes-pattern.png');
+      background-image: url("#{$image-path}/stripes-pattern.png");
       background-size: 5px 5px;
       background-position: left top;
       position: relative;
@@ -245,7 +245,7 @@
         }
       }
       .feed__article__content {
-        background-image: url('/img/featured-article-bg.png');
+        background-image: url("#{$image-path}/featured-article-bg.png");
         background-size: cover;
         background-position: right center;
         background-repeat: no-repeat;
