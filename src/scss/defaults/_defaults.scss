@@ -4,12 +4,20 @@
   background-position: left top;
 }
 .section {
+  position: relative;
+  z-index: 1;
   &-wrapper {
     max-width: 1260px;
     padding: 0 15px;
     margin: 0 auto;
     position: relative;
     width: 100%;
+  }
+  &--pull-quote {
+    z-index: 0;
+  }
+  &--meta {
+    z-index: 2;
   }
 }
 .disqus {

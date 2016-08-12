@@ -1,8 +1,8 @@
 # PHP Web Server
 web:
-  # Build the Drupal 8 image
+  # Build the Drupal 7 image
   # https://hub.docker.com/r/_/drupal/
-  image: drupal:8
+  image: drupal:7
   # Environment variables
   environment:
     # Drupal settings
@@ -34,4 +34,8 @@ database:
     MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
   ports:
     - "3306:3306"
+  volumes:
+    # Drupal should live in the "drupal" directory
+    - ./msql:/app
+  working_dir: /app
   restart: always

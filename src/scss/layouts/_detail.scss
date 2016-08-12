@@ -1,5 +1,9 @@
-.page--article-detail {
-  .hero {
-    background-color: #03520d;
+// Category-specific coloring
+@each $category-name, $color in $category-colors {
+  $color: map-get($category-colors, $category-name);
+  .page--article-detail.page--#{$category-name} {
+    .hero, .section--pull-quote {
+      background-color: $color;
+    }
   }
 }

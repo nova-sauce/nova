@@ -16,18 +16,12 @@ function nova_preprocess_html(&$vars) {
   if ($current_entity && isset($current_entity->type)) {
     $vars['theme_hook_suggestions'][] = 'html__' . $current_entity->type;
     switch ($current_entity->type) {
-      case 'landing_page':
-        $vars['classes_array'][] = 'page';
+      case 'news':
+        $vars['classes_array'][] = 'page--article-detail';
         break;
       default:
-        // do something
+        $vars['classes_array'][] = 'page';
         break;
-    }
-  } elseif (isset($current_entity->vocabulary_machine_name)) {
-    $vocabularies = array('categories', 'artice-tags');
-    if (in_array($current_entity->vocabulary_machine_name, $vocabularies)) {
-      $vars['classes_array'][] = 'listing';
-      $vars['classes_array'][] = $current_entity->vocabulary_machine_name . '-listing';
     }
   }
 
