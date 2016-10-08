@@ -2,13 +2,20 @@
   font-size: 18px;
   line-height: 35px;
   @include letter-spacing(10, 18);
-  color: #333;
+  color: $mine-shaft;
   @extend %Roboto;
+  h3 {
+    @extend %RobotoSlabBold;
+    font-size: 32px;
+    line-height: 35px;
+    @include letter-spacing(10, 32);
+    margin-bottom: 10px;
+  }
   p {
     font-size: 18px;
     line-height: 35px;
     @include letter-spacing(10, 18);
-    color: #333;
+    color: $mine-shaft;
     @extend %Roboto;
     margin-bottom: 30px;
     &:last-child {

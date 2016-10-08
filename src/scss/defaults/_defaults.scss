@@ -21,7 +21,7 @@
   }
 }
 .disqus {
-  background-color: #fff;
+  background-color: $white;
   padding: 50px 0;
 }
 .brand-divider {
@@ -37,7 +37,6 @@
   &:before {
     content: '';
     height: 1px;
-    width: 32px;
     position: absolute;
     display: inline-block;
     background-color: #aeaeae;
@@ -61,8 +60,6 @@
 }
 .content {
   position: relative;
-  margin-top: -64px;
-  margin-bottom: 64px;
 }
 svg {
   fill: $white;

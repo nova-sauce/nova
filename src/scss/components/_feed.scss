@@ -5,6 +5,9 @@
     .article__meta {
       background-color: $color;
     }
+    .feed__article__image {
+      background-color: $color;
+    }
   }
   .feed__article--featured.feed__article--#{$category-name} {
     background-color: $color;
@@ -40,6 +43,9 @@
       height: 250px;
       .image {
         height: 100%;
+        opacity: 1;
+        transform: scale(1);
+        transition: opacity 250ms, transform 500ms;
         width: 100%;
         background-size: cover;
         background-position: center center;
@@ -69,6 +75,13 @@
             li {
               display: inline-block;
               vertical-align: top;
+              margin-right: 30px;
+              img {
+                max-width: 46px;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
             }
           }
           &--tags {
@@ -196,6 +209,7 @@
         height: 500px;
       }
       .feed__article__content {
+        overflow: hidden;
         padding-top: 0;
         text-align: center;
         .title, a {
@@ -302,6 +316,7 @@
       .feed__article__image {
         .image {
           opacity: .3;
+          transform: scale(1.2);
         }
       }
       &.feed__article--video {
@@ -479,7 +494,7 @@
           .label {
             font-size: 18px;
           }
-          .list{
+          .list {
             &--tags {
               li {
                 font-size: 11px;

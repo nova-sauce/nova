@@ -30,10 +30,13 @@
         'components/pull-quote',
         'components/share-this',
         'components/comments',
-        'components/slick';
+        'components/slick',
+        'components/webform';
 
 //
 //  Import the layouts used for different page types
 //
 @import 'layouts/home',
-        'layouts/detail';
+        'layouts/detail',
+        'layouts/basic',
+        'layouts/tags';

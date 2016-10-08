@@ -1,0 +1,79 @@
+.webform-client-form {
+  width: 100%;
+  > div {
+    padding: 0 20px 80px;
+    background-color: $white;
+    max-width: 1260px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    .form-wrapper {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 0;
+      > h3 {
+        @extend %RobotoSlabBold;
+        font-size: 32px;
+        line-height: 35px;
+        @include letter-spacing(10, 32);
+        margin-bottom: 10px;
+        margin-left: 2%;
+      }
+      .form-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 45%;
+        margin: 0 2% 30px;
+        &.webform-component-textarea {
+          display: block;
+          width: 100%;
+        }
+      }
+      label {
+        font-size: 12px;
+        line-height: 24px;
+        text-transform: uppercase;color: $mine-shaft;
+        @extend %RobotoBold;
+        display: block;
+      }
+      input,
+      textarea,
+      select {
+        background-color: $gallery;
+        padding: 5px 20px;
+        width: 100%;
+        font-size: 14px;
+      }
+      input,
+      select {
+        height: 45px;
+      }
+      select {
+        font-size: 14px;
+        @extend %RobotoBold;
+        color: $mine-shaft;
+      }
+      textarea {
+        min-height: 150px;
+        resize: none;
+        width: 94%;
+        padding: 20px;
+      }
+      .form-actions {
+        margin: 0 2%;
+        width: 94%;
+      }
+      .form-submit {
+        font-size: 20px;
+        line-height: 38px;
+        @include letter-spacing(10, 20);
+        text-transform: uppercase;
+        @extend %RobotoBold;
+        color: $white;
+        height: 60px;
+        cursor: pointer;
+        background-color: $pacific-blue;
+      }
+    }
+  }
+}

@@ -17,9 +17,9 @@
       <div class="feed__article__details__content feed__article__details__content--social">
         <div class="label">Share:</div>
         <ul class="list list--social">
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><a href="http://www.facebook.com/sharer.php?u=http://www.ign.com/articles/2016/09/04/pax-west-2016-gears-of-war-4-we-really-really-missed-horde-mode" target="_blank"><img src="/<?php print IMG_PATH; ?>facebook-circle.png" alt="" /></a></li>
+          <li><a href="http://twitter.com/share?url=http://localhost:3000&amp;text=Uncharted 4: A Thief's End&amp;hashtags=novasauce"><img src="/<?php print IMG_PATH; ?>twitter-circle.png" alt="" /></a></li>
+          <li><a href="https://plus.google.com/share?url=http://www.ign.com/articles/2016/09/04/pax-west-2016-gears-of-war-4-we-really-really-missed-horde-mode" target="_blank"><img src="/<?php print IMG_PATH; ?>google-plus-circle.png" alt="" /></a></li>
         </ul>
       </div>
       <div class="feed__article__details__content feed__article__details__content--tags">

@@ -15,4 +15,6 @@
     </div>
   </div>
 </div>
-<?php print render($page['content']); ?>
+<main class="content">
+  <?php print render($page['content']); ?>
+</main>

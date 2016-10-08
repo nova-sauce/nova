@@ -1,4 +1,39 @@
 /*globals window, document, setTimeout*/
+(function($) {
+  /**
+   * jQuery function to prevent default anchor event and take the href * and the title to make a share pupup
+   *
+   * @param  {[object]} e           [Mouse event]
+   * @param  {[integer]} intWidth   [Popup width defalut 500]
+   * @param  {[integer]} intHeight  [Popup height defalut 400]
+   * @param  {[boolean]} blnResize  [Is popup resizeabel default true]
+   */
+  $.fn.customerPopup = function(e, intWidth, intHeight, blnResize) {
+    // Prevent default anchor event
+    e.preventDefault();
+
+    // Set values for window
+    let $intWidth = intWidth || '500',
+      $intHeight = intHeight || '400',
+      strResize = (blnResize ? 'yes' : 'no');
+
+    // Set title and open popup with focus on it
+    var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),
+      strParam = 'width=' + $intWidth + ',height=' + $intHeight + ',resizable=' + strResize,
+      objWindow = window.open(this.attr('href'), strTitle, strParam).focus();
+  };
+
+  /* ================================================== */
+
+  $(document).ready(function($) {
+    $('.feed .list--social li a').on('click', function(e) {
+      $(this).customerPopup(e);
+    });
+    $('.hero__social-link a').on('click', function(e) {
+      $(this).customerPopup(e);
+    });
+  });
+}(jQuery));
 (($, NS) => {
   'use strict';
   let $this,
@@ -161,7 +196,9 @@
       if (settings.vpWidth >= 796) {
         heightsEqualizer();
       } else {
-        $('[data-key="sameHeights"]').css('height', 'auto');
+        setTimeout(function() {
+          $('[data-key="sameHeights"]').css('height', 'auto');
+        }, 250);
       }
 
       $(window).on('resize', windowResize);

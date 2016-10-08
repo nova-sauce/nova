@@ -3,7 +3,7 @@
   background-size: cover;
   padding-bottom: 120px;
   padding-top: 120px;
-  max-height: 738px;
+  // max-height: 738px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -27,7 +27,8 @@
     }
   }
   &__image {
-    background-image: url("#{$image-path}/article-hero.jpg");
+    background-size: cover;
+    background-position: center center;
     position: absolute;
     top: 0;
     left: 0;

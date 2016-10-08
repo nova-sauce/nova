@@ -16,6 +16,9 @@ function nova_preprocess_html(&$vars) {
   if ($current_entity && isset($current_entity->type)) {
     $vars['theme_hook_suggestions'][] = 'html__' . $current_entity->type;
     switch ($current_entity->type) {
+      case 'basic_page':
+        $vars['classes_array'][] = 'page--basic';
+        break;
       case 'news':
         $vars['classes_array'][] = 'page--article-detail';
         break;
@@ -55,7 +58,7 @@ function nova_process_html(&$vars) {
   $page_top = preg_replace($before, $after, $page_top);
   $vars['page_top'] = $page_top;
   // Page content.
-  if (!preg_match('/<pre|<textarea/', $vars['page'])) {
+  if (!preg_match('/<pre|<style|<script|<textarea/', $vars['page'])) {
     $page = $vars['page'];
     $page = preg_replace($before, $after, $page);
     $vars['page'] = $page;
@@ -89,6 +92,10 @@ function nova_preprocess_page(&$vars) {
   // Specific page templates for each content type.
   if (isset($vars['node'])) {
     $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+  }
+  if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
+    unset($vars['page']['content']['system_main']['term_heading']['#prefix']);
+    unset($vars['page']['content']['system_main']['term_heading']['#suffix']);
   }
 }
 
