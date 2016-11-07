@@ -15,7 +15,7 @@
 				// use: [pngquant()]
 			};
 
-      return gulp.src(plugins.path.resolve(paths.src, 'img/**/*.{png,jpg,gif,svg}'))
+      return gulp.src(plugins.path.resolve(paths.src, 'img/*.{png,jpg,gif,svg}'))
 				.pipe(plugins.imagemin(options))
 				.pipe(gulp.dest(plugins.path.resolve(paths.build, 'img')))
         .pipe(plugins.browserSync.reload({stream: true}));

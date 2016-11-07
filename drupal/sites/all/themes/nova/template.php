@@ -66,7 +66,7 @@ function nova_process_html(&$vars) {
   // Page bottom.
   $page_bottom = $vars['page_bottom'];
   $page_bottom = preg_replace($before, $after, $page_bottom);
-  $vars['page_bottom'] = $page_bottom . drupal_get_js('footer');
+  $vars['page_bottom'] = $page_bottom;
 }
 
 /**
