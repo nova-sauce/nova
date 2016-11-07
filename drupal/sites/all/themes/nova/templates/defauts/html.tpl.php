@@ -85,26 +85,26 @@
               <svg class="logo-text"><use xlink:href="#logo-text"></use></svg>
             </div>
             <div class="footer__brand-info__disclaimer">
-              <p>Copyright 2016 NOVASAUCE, LLC</p>
+              <p>&copy; 2016 NOVASAUCE, LLC</p>
             </div>
           </div>
           <div class="footer__info">
             <ul class="social-icons">
               <li class="icon icon--facebook">
-                <a href="#"></a>
+                <a href="https://www.facebook.com/novasauce/"></a>
               </li>
               <li class="icon icon--twitter">
-                <a href="#"></a>
+                <a href="https://twitter.com/novasauceus"></a>
               </li>
               <li class="icon icon--instagram">
-                <a href="#"></a>
+                <a href="https://www.instagram.com/novasauceus/"></a>
               </li>
-              <li class="icon icon--vimeo">
+              <!-- <li class="icon icon--vimeo">
                 <a href="#"></a>
               </li>
               <li class="icon icon--gplus">
                 <a href="#"></a>
-              </li>
+              </li> -->
             </ul>
             <div class="footer__info__links">
               <?php if ($footer_menu_menu): ?>
