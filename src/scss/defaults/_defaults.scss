@@ -18,6 +18,9 @@
   }
   &--meta {
     z-index: 2;
+    .section-wrapper {
+      padding: 0;
+    }
   }
 }
 .disqus {
