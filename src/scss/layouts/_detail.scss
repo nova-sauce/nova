@@ -7,7 +7,19 @@
     }
   }
 }
-.page--article-detail .content {
-  margin-top: -64px;
-  margin-bottom: 64px;
+.page--article-detail {
+  .content {
+    margin-top: -64px;
+    margin-bottom: 64px;
+  }
+  .hero__copy {
+    max-width: 1260px;
+    padding: 0 15px;
+    width: 100%;
+  }
+  .section--copy {
+    .section-wrapper {
+      background-color: $white;
+    }
+  }
 }

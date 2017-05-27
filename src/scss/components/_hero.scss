@@ -157,11 +157,15 @@
     }
   }
   @include mediaquery($max, 414) {
-    padding-top: 70px;
-    height: 264px;
+    // padding-top: 70px;
+    // height: 264px;
     &__title {
-      position: relative;
-      height: 53px;
+      // position: relative;
+      // height: 53px;
+      .title {
+        font-size: 48px;
+        line-height: 52px;
+      }
     }
     .logo {
       max-width: calc(89px/2);
